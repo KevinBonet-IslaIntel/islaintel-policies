@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TikTok OAuth Callback</title>
+</head>
+<body>
+  <h2>OAuth Response</h2>
+  <div id="output"></div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const state = params.get("state");
+
+    document.getElementById("output").innerText = code 
+      ? `Code: ${code}\nState: ${state}` 
+      : "No code received.";
+  </script>
+</body>
+</html>
